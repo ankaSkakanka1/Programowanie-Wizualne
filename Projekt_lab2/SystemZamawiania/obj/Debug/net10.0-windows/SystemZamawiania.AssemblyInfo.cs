@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MojeOkno")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("SystemZamawiania")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4285b42e7319ef681b95d216917196ef2d4f7e27")]
-[assembly: System.Reflection.AssemblyProductAttribute("MojeOkno")]
-[assembly: System.Reflection.AssemblyTitleAttribute("MojeOkno")]
+[assembly: System.Reflection.AssemblyProductAttribute("SystemZamawiania")]
+[assembly: System.Reflection.AssemblyTitleAttribute("SystemZamawiania")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

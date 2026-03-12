@@ -1,0 +1,5 @@
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.AssemblyInfoInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.AssemblyInfo.cs
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.sourcelink.json

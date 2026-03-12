@@ -10,3 +10,15 @@ C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\Moja
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\refint\MojaBiblioteka.dll
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.pdb
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\ref\MojaBiblioteka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\bin\Debug\net10.0\MojaBiblioteka.deps.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\bin\Debug\net10.0\MojaBiblioteka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\bin\Debug\net10.0\MojaBiblioteka.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.AssemblyInfoInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.AssemblyInfo.cs
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.sourcelink.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\refint\MojaBiblioteka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\ref\MojaBiblioteka.dll

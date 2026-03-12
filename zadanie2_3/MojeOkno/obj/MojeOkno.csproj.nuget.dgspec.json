@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj": {}
+    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
+    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
+        "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
         "projectName": "MojaBiblioteka",
-        "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
+        "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
         "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\obj\\",
+        "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Windows 10\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -337,14 +337,14 @@
         }
       }
     },
-    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj": {
+    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
+        "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
         "projectName": "MojeOkno",
-        "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
+        "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
         "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\obj\\",
+        "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Windows 10\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -359,8 +359,8 @@
           "net10.0-windows7.0": {
             "targetAlias": "net10.0-windows",
             "projectReferences": {
-              "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
-                "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj"
+              "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
+                "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj"
               }
             }
           }
