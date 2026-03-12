@@ -17,6 +17,7 @@ C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\Moje
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojeOkno\obj\Debug\net10.0-windows\MojeOkno.pdb
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojeOkno\obj\Debug\net10.0-windows\MojeOkno.genruntimeconfig.cache
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojeOkno\obj\Debug\net10.0-windows\ref\MojeOkno.dll
+<<<<<<< HEAD
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojeOkno\bin\Debug\net10.0-windows\MojeOkno.exe
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojeOkno\bin\Debug\net10.0-windows\MojeOkno.deps.json
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojeOkno\bin\Debug\net10.0-windows\MojeOkno.runtimeconfig.json
@@ -36,3 +37,5 @@ C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-W
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojeOkno\obj\Debug\net10.0-windows\MojeOkno.pdb
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojeOkno\obj\Debug\net10.0-windows\MojeOkno.genruntimeconfig.cache
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojeOkno\obj\Debug\net10.0-windows\ref\MojeOkno.dll
+=======
+>>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce

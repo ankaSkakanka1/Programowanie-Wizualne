@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "lg3/lM+ZAkA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
+=======
+  "dgSpecHash": "k1OMHwkXxQE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
+>>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce
   "expectedPackageFiles": [],
   "logs": []
 }

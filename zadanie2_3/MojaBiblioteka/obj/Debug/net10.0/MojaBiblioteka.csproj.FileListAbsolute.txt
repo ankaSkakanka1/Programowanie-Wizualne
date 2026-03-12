@@ -10,6 +10,7 @@ C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\Moja
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\refint\MojaBiblioteka.dll
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.pdb
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\ref\MojaBiblioteka.dll
+<<<<<<< HEAD
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\bin\Debug\net10.0\MojaBiblioteka.deps.json
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\bin\Debug\net10.0\MojaBiblioteka.dll
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\bin\Debug\net10.0\MojaBiblioteka.pdb
@@ -22,3 +23,5 @@ C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-W
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\refint\MojaBiblioteka.dll
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\MojaBiblioteka.pdb
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\zadanie2_3\MojaBiblioteka\obj\Debug\net10.0\ref\MojaBiblioteka.dll
+=======
+>>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
         "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\obj\\",
+=======
+    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
+        "projectName": "MojaBiblioteka",
+        "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
+        "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\obj\\",
+>>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Windows 10\\AppData\\Roaming\\NuGet\\NuGet.Config"
