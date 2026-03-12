@@ -1,17 +1,17 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-//using MojaBiblioteka; // Tu może być błąd, jeśli DLL nie jest podpięta - naprawimy to w kroku 2
+//using MojaBiblioteka; // póżniej podłączyć, na razie bez kombinowania bo są błędy
 
 namespace SystemZamawiania;
-
+//tworzenie głównego okna aplikacji
 public partial class MainForms : Form
 {
     private ListView lvKoszyk = new ListView 
     { 
         Location = new Point(20, 40), 
         Size = new Size(250, 200), 
-        View = System.Windows.Forms.View.Details, 
+        View = System.Windows.Forms.View.Details, //widok jak tabelka
         FullRowSelect = true 
     };
 
@@ -34,7 +34,7 @@ public partial class MainForms : Form
         Text = "Zapłać", 
         Location = new Point(280, 120), 
         Width = 120,
-        BackColor = Color.LightGreen 
+        BackColor = Color.LightPink //graphic design is my passion <3
     };
 
     private Label lblCena = new Label 
@@ -47,7 +47,7 @@ public partial class MainForms : Form
 
     public MainForms()
     {
-        // InitializeComponent(); // Jeśli masz błąd w Designerze, zakomentuj tę linię na chwilę
+        // InitializeComponent(); // zakomentowane bo był błąd w designerze, poszukać why???
         this.Text = "System Zamawiania Jedzenia";
         this.Size = new Size(450, 350);
 
@@ -60,24 +60,24 @@ public partial class MainForms : Form
         this.Controls.Add(btnZaplac);
         this.Controls.Add(lblCena);
 
-        btnWybierz.Click += BtnWybierz_Click;
+        btnWybierz.Click += BtnWybierz_Click; //podpięcie akcji do przycisku 
     }
 
     private void BtnWybierz_Click(object? sender, EventArgs e) 
 {
-    // Tworzenie instancji drugiego okna i przekazanie danych przez konstruktor
-    using (ProduktyForms oknoProduktow = new ProduktyForms("Wybierz danie z menu:")) 
+    // Tworzenie drugiego okna i przekazanie danych przez konstruktor
+    using (ProduktyForms oknoProduktow = new ProduktyForms("Wybierz danie z menu:")) //otwieranie
     {
         // Wyświetlenie okna jako modalne (blokuje okno główne do czasu zamknięcia)
         if (oknoProduktow.ShowDialog() == DialogResult.OK) 
         {
-            // Odebranie danych z właściwości publicznej podokna
+            //pobiera produkt z drugiego okna
             string produkt = oknoProduktow.WybranyProdukt;
             
-            // Rozdzielenie nazwy od ceny (zakładając format "Nazwa - Cena zł")
+            // Rozdzielenie nazwy od ceny 
             string[] czesci = produkt.Split(" - ");
             
-            // Dodanie elementu do ListView (Koszyka) w MainForm
+            // Dodanie produktu do koszyka w MainForm
             ListViewItem item = new ListViewItem(czesci[0]); // Nazwa produktu
             item.SubItems.Add(czesci[1]); // Cena
             lvKoszyk.Items.Add(item);
