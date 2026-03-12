@@ -22,10 +22,11 @@ public partial class ProduktyForms : Form
         
         //adrange-dodaje elementy do listboxa
         lbProdukty.Items.AddRange(new string[] { 
-            "Pizza Margherita - 30 zł", 
-            "Burger Wołowy - 25 zł", 
-            "Sałatka Cezar - 20 zł",
-            "Pasta Carbonara - 28 zł" 
+            "Soy del Rey Blanco Seco - 36 zł", 
+            "Soy del Rey Tinto Seco - 36 zł", 
+            "Soy del Rey Tinto Semi Dulce - 36 zł",
+            "Soy del Rey Blanco Semi Dulce - 36 zł",
+            "Soy del Rey Non Alcoholic Rosado - 30 zł"
         });
 
         this.Controls.Add(lbl);
