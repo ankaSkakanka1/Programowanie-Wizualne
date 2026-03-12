@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace SystemZamawiania;
 
-public partial class MainForm : Form
+public partial class MainForms : Form
 {
     private ListView lvKoszyk = new ListView 
     { 
@@ -45,7 +45,7 @@ public partial class MainForm : Form
         AutoSize = true 
     };
 
-    public MainForm()
+    public MainForms()
     {
         // InitializeComponent(); // Jeśli masz błąd w Designerze, zakomentuj tę linię na chwilę
         this.Text = "System Zamawiania Jedzenia";
@@ -63,8 +63,27 @@ public partial class MainForm : Form
         btnWybierz.Click += BtnWybierz_Click;
     }
 
-    private void BtnWybierz_Click(object sender, EventArgs e) 
+    private void BtnWybierz_Click(object? sender, EventArgs e) 
+{
+    // Tworzenie instancji drugiego okna i przekazanie danych przez konstruktor
+    using (ProduktyForms oknoProduktow = new ProduktyForms("Wybierz danie z menu:")) 
     {
-        // Tutaj otworzymy podokno w kolejnym kroku
+        // Wyświetlenie okna jako modalne (blokuje okno główne do czasu zamknięcia)
+        if (oknoProduktow.ShowDialog() == DialogResult.OK) 
+        {
+            // Odebranie danych z właściwości publicznej podokna
+            string produkt = oknoProduktow.WybranyProdukt;
+            
+            // Rozdzielenie nazwy od ceny (zakładając format "Nazwa - Cena zł")
+            string[] czesci = produkt.Split(" - ");
+            
+            // Dodanie elementu do ListView (Koszyka) w MainForm
+            ListViewItem item = new ListViewItem(czesci[0]); // Nazwa produktu
+            item.SubItems.Add(czesci[1]); // Cena
+            lvKoszyk.Items.Add(item);
+            
+            MessageBox.Show($"Dodano do koszyka: {czesci[0]}");
+        }
     }
+}
 }

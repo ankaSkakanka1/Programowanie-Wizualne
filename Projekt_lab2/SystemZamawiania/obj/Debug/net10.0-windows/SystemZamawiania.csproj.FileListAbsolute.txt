@@ -3,3 +3,13 @@ C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-W
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.AssemblyInfo.cs
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.csproj.CoreCompileInputs.cache
 C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.sourcelink.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\bin\Debug\net10.0-windows\SystemZamawiania.exe
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\bin\Debug\net10.0-windows\SystemZamawiania.deps.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\bin\Debug\net10.0-windows\SystemZamawiania.runtimeconfig.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\bin\Debug\net10.0-windows\SystemZamawiania.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\bin\Debug\net10.0-windows\SystemZamawiania.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\refint\SystemZamawiania.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\SystemZamawiania.genruntimeconfig.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab2\SystemZamawiania\obj\Debug\net10.0-windows\ref\SystemZamawiania.dll
