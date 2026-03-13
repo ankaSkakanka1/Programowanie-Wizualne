@@ -8,7 +8,7 @@ public partial class ZaplatyForms : Form
 {
     private RadioButton rbZaplaty = new RadioButton { Location = new Point(10, 40), Size = new Size(200, 30) };
     private RadioButton rbBlik = new RadioButton { Location = new Point(10, 70), Size = new Size(200, 30) };
-    private Button btnZaplac = new Button { Text = "Zaplać", Location = new Point(10, 110), Width = 120 };
+    private Button btnZaplac = new Button { Text = "Zapłać", Location = new Point(10, 110), Width = 120 };
 
     public string WybranaZaplata { get; private set; } = "";
 

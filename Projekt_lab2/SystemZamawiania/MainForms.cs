@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-//using MojaBiblioteka; // póżniej podłączyć, na razie bez kombinowania bo są błędy
 
 namespace SystemZamawiania;
 //tworzenie głównego okna aplikacji
@@ -45,10 +44,26 @@ public partial class MainForms : Form
         AutoSize = true
     };
 
+    private Label lblWybranyTransport = new Label
+    {
+        Text = "Transport: Nie wybrano",
+        Location = new Point(20, 270),
+        AutoSize = true
+    };
+
+    private Label lblWybranaPlatnosc = new Label
+    {
+        Text = "Płatność: Nie wybrano",
+        Location = new Point(20, 290),
+        AutoSize = true
+    };
+
+    private double transportCena = 0.0;
+
     public MainForms()
     {
         // InitializeComponent(); // zakomentowane bo był błąd w designerze
-        this.Text = "System Zamawiania Jedzenia";
+        this.Text = "System Zamawiania Wina";
         this.Size = new Size(450, 350);
 
         lvKoszyk.Columns.Add("Produkt", 150);
@@ -59,6 +74,8 @@ public partial class MainForms : Form
         this.Controls.Add(btnTransport);
         this.Controls.Add(btnZaplac);
         this.Controls.Add(lblCena);
+        this.Controls.Add(lblWybranyTransport);
+        this.Controls.Add(lblWybranaPlatnosc);
 
         btnWybierz.Click += BtnWybierz_Click;
         btnTransport.Click += BtnTransport_Click;
@@ -79,6 +96,7 @@ public partial class MainForms : Form
                 total += cena;
             }
         }
+        total += transportCena;
         lblCena.Text = $"Suma: {total:F2} zł";
     }
 
@@ -110,6 +128,12 @@ public partial class MainForms : Form
 
     private void BtnTransport_Click(object? sender, EventArgs e)
     {
+        if (lvKoszyk.Items.Count == 0)
+        {
+            MessageBox.Show("Nie wybrano jeszcze produktów!");
+            return;
+        }
+
         // Tworzenie okna z opcjami transportu
         using (TransportForms oknoTransport = new TransportForms())
         {
@@ -120,6 +144,20 @@ public partial class MainForms : Form
             if (oknoTransport.ShowDialog() == DialogResult.OK)
             {
                 string transport = oknoTransport.WybranyTransport;
+
+                // Parsowanie ceny transportu
+                string[] czesciTransport = transport.Split(" - ");
+                if (czesciTransport.Length == 2)
+                {
+                    string cenaStr = czesciTransport[1].Replace(" zł", "").Trim();
+                    if (double.TryParse(cenaStr, out double cena))
+                    {
+                        transportCena = cena;
+                    }
+                }
+
+                lblWybranyTransport.Text = $"Transport: {transport}";
+                UpdateTotal();
                 MessageBox.Show($"Wybrany transport: {transport}");
             }
         }
@@ -127,6 +165,12 @@ public partial class MainForms : Form
 
     private void BtnZaplac_Click(object? sender, EventArgs e)
     {
+        if (lvKoszyk.Items.Count == 0)
+        {
+            MessageBox.Show("Nie wybrano jeszcze produktów!");
+            return;
+        }
+
         // Ustawienie zmiennych globalnych 
         Globals.Variable1 = "Wartość 1 dla płatności";
         Globals.Variable2 = "Wartość 2 dla płatności";
@@ -137,7 +181,15 @@ public partial class MainForms : Form
             if (oknoZaplac.ShowDialog() == DialogResult.OK)
             {
                 string zaplata = oknoZaplac.WybranaZaplata;
-                MessageBox.Show($"Wybrana forma płatności: {zaplata}");
+                lblWybranaPlatnosc.Text = $"Płatność: {zaplata}";
+                MessageBox.Show("Zapłacono!");
+
+                // Reset koszyka i wyborów
+                lvKoszyk.Items.Clear();
+                transportCena = 0.0;
+                UpdateTotal();
+                lblWybranyTransport.Text = "Transport: Nie wybrano";
+                lblWybranaPlatnosc.Text = "Płatność: Nie wybrano";
             }
         }
     }
