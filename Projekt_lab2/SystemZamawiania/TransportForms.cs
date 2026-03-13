@@ -13,6 +13,12 @@ public partial class TransportForms : Form
     [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
     public string WybranyTransport { get; private set; } = "";
 
+    // Dodane właściwości dla komunikacji 
+    [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+    public string Variable1 { get; set; } = "";
+    [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+    public string Variable2 { get; set; } = "";
+
     public TransportForms()
     {
         this.Text = "Opcje Transportu";
@@ -32,11 +38,11 @@ public partial class TransportForms : Form
         this.Controls.Add(clbTransport);
         this.Controls.Add(btnWybierz);
 
-        // Obsługa kliknięcia przycisku
-        btnWybierz.Click += (s, e) => {
+        btnWybierz.Click += (s, e) =>
+        {
             if (clbTransport.CheckedItems.Count > 0)
             {
-                WybranyTransport = clbTransport.CheckedItems[0].ToString() ?? "";
+                WybranyTransport = clbTransport.CheckedItems[0]?.ToString() ?? "";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

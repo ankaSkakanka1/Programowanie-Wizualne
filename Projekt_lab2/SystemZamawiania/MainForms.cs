@@ -47,7 +47,7 @@ public partial class MainForms : Form
 
     public MainForms()
     {
-        // InitializeComponent(); // zakomentowane bo był błąd w designerze, poszukać why???
+        // InitializeComponent(); // zakomentowane bo był błąd w designerze
         this.Text = "System Zamawiania Jedzenia";
         this.Size = new Size(450, 350);
 
@@ -60,14 +60,32 @@ public partial class MainForms : Form
         this.Controls.Add(btnZaplac);
         this.Controls.Add(lblCena);
 
-        btnWybierz.Click += BtnWybierz_Click; //podpięcie akcji do przycisku 
-        btnTransport.Click += BtnTransport_Click; //podpięcie akcji do przycisku Transport
+        btnWybierz.Click += BtnWybierz_Click;
+        btnTransport.Click += BtnTransport_Click;
+        btnZaplac.Click += BtnZaplac_Click;
+
+        UpdateTotal(); // Inicjalizacja sumy
+    }
+
+    private void UpdateTotal()
+    {
+        double total = 0.0;
+        foreach (ListViewItem item in lvKoszyk.Items)
+        {
+            string cenaStr = item.SubItems[1].Text; // np. "15 zł"
+            string cenaBezZl = cenaStr.Replace(" zł", "").Trim();
+            if (double.TryParse(cenaBezZl, out double cena))
+            {
+                total += cena;
+            }
+        }
+        lblCena.Text = $"Suma: {total:F2} zł";
     }
 
     private void BtnWybierz_Click(object? sender, EventArgs e)
     {
         // Tworzenie drugiego okna i przekazanie danych przez konstruktor
-        using (ProduktyForms oknoProduktow = new ProduktyForms("Wybierz danie z menu:")) //otwieranie
+        using (ProduktyForms oknoProduktow = new ProduktyForms("Wybierz produkt:")) //otwieranie
         {
             // Wyświetlenie okna jako modalne (blokuje okno główne do czasu zamknięcia)
             if (oknoProduktow.ShowDialog() == DialogResult.OK)
@@ -79,9 +97,11 @@ public partial class MainForms : Form
                 string[] czesci = produkt.Split(" - ");
 
                 // Dodanie produktu do koszyka w MainForm
-                ListViewItem item = new ListViewItem(czesci[0]); // Nazwa produktu
+                ListViewItem item = new ListViewItem(czesci[0]);
                 item.SubItems.Add(czesci[1]); // Cena
                 lvKoszyk.Items.Add(item);
+
+                UpdateTotal(); // Aktualizacja sumy po dodaniu produktu
 
                 MessageBox.Show($"Dodano do koszyka: {czesci[0]}");
             }
@@ -93,13 +113,31 @@ public partial class MainForms : Form
         // Tworzenie okna z opcjami transportu
         using (TransportForms oknoTransport = new TransportForms())
         {
-            // Wyświetlenie okna jako modalne
+            // Ustawienie właściwości przed pokazaniem okna
+            oknoTransport.Variable1 = "Wartość 1";
+            oknoTransport.Variable2 = "Wartość 2";
+
             if (oknoTransport.ShowDialog() == DialogResult.OK)
             {
-                // Pobiera wybrany transport z okna
                 string transport = oknoTransport.WybranyTransport;
                 MessageBox.Show($"Wybrany transport: {transport}");
-                // Tutaj można dodać logikę np. zapisania transportu do zmiennej
+            }
+        }
+    }
+
+    private void BtnZaplac_Click(object? sender, EventArgs e)
+    {
+        // Ustawienie zmiennych globalnych 
+        Globals.Variable1 = "Wartość 1 dla płatności";
+        Globals.Variable2 = "Wartość 2 dla płatności";
+
+        // Tworzenie okna płatności
+        using (ZaplatyForms oknoZaplac = new ZaplatyForms())
+        {
+            if (oknoZaplac.ShowDialog() == DialogResult.OK)
+            {
+                string zaplata = oknoZaplac.WybranaZaplata;
+                MessageBox.Show($"Wybrana forma płatności: {zaplata}");
             }
         }
     }

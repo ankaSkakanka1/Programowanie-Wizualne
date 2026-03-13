@@ -33,12 +33,11 @@ public partial class ProduktyForms : Form
         this.Controls.Add(lbProdukty);
         this.Controls.Add(btnDodaj);
 
-        //gdy użytkownik kilknie dodaj
         btnDodaj.Click += (s, e) => {
             if (lbProdukty.SelectedItem != null) {
                 WybranyProdukt = lbProdukty.SelectedItem.ToString() ?? "";
-                this.DialogResult = DialogResult.OK; // Ustawienie wyniku na OK
-                this.Close(); // Zamknięcie okna
+                this.DialogResult = DialogResult.OK; 
+                this.Close(); 
             } else {
                 MessageBox.Show("Proszę najpierw wybrać produkt z listy!");
             }
