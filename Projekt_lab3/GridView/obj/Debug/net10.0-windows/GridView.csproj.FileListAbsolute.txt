@@ -1,0 +1,15 @@
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.AssemblyInfoInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.AssemblyInfo.cs
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.sourcelink.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\bin\Debug\net10.0-windows\GridView.exe
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\bin\Debug\net10.0-windows\GridView.deps.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\bin\Debug\net10.0-windows\GridView.runtimeconfig.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\bin\Debug\net10.0-windows\GridView.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\bin\Debug\net10.0-windows\GridView.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\refint\GridView.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\GridView.genruntimeconfig.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab3\GridView\obj\Debug\net10.0-windows\ref\GridView.dll
