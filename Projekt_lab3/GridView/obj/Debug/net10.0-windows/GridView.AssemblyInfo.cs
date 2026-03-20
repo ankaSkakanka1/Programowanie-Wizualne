@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GridView")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2139c9c43fa60e222a7272a070953c5f1e37119")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ba1766bc04a55f6898bbcc134fa2f4e10e13bb8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GridView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GridView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

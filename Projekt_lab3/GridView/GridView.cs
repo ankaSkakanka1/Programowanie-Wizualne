@@ -2,6 +2,8 @@ using System;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data; 
+using System.IO;
+using System.Linq;
 
 namespace GridView;
 public partial class Form1 : Form 
@@ -22,13 +24,10 @@ public partial class Form1 : Form
         DataTable dataTable = new DataTable();
         
         dataTable.Columns.Add("ID", typeof(int));
-        dataTable.Columns.Add("Imię", typeof(string));
+        dataTable.Columns.Add("Imie", typeof(string));
         dataTable.Columns.Add("Nazwisko", typeof(string));
         dataTable.Columns.Add("Wiek", typeof(int));
         dataTable.Columns.Add("Stanowisko", typeof(string));
-
-        dataTable.Rows.Add(1, "Jan", "Kowalski", 30, "Asystent");
-        dataTable.Rows.Add(2, "Iza", "Pełka", 20, "Asystent");
 
         bindingSource.DataSource = dataTable;
         
@@ -44,7 +43,6 @@ public partial class Form1 : Form
         btnDodaj.Click += new EventHandler(btnDodaj_Click); // Przypisanie akcji 
         this.Controls.Add(btnDodaj);
 
-        // Przycisk USUŃ
         btnUsun.Text = "Usuń";
         btnUsun.Location = new Point(120, 320);
         btnUsun.Size = new Size(100, 30);
@@ -67,7 +65,21 @@ public partial class Form1 : Form
 
     private void btnDodaj_Click(object sender, EventArgs e)
     { 
-        MessageBox.Show("Tutaj otworzy się okno dodawania pracownika.");
+        Form2 dodawaniePracownika = new Form2();
+        if (dodawaniePracownika.ShowDialog() == DialogResult.OK)
+        {
+            DataTable? dataTable = bindingSource.DataSource as DataTable;
+            if(dataTable != null)
+            {
+                int noweID = 1;
+                if(dataTable.Rows.Count > 0)
+                {
+                    noweID = Convert.ToInt32(dataTable.Compute("max([ID])", string.Empty)) + 1;
+                }
+
+                dataTable.Rows.Add(noweID, dodawaniePracownika.txtImie.Text, dodawaniePracownika.txtNazwisko.Text, (int)dodawaniePracownika.numWiek.Value, dodawaniePracownika.cmbStanowisko.SelectedItem.ToString() ?? "Brak");
+            }
+        }
     }
 
     private void btnUsun_Click(object sender, EventArgs e)
@@ -82,13 +94,93 @@ public partial class Form1 : Form
         }
     }
 
-    private void btnZapis_Click(object sender, EventArgs e)
+    private void btnZapis_Click(object? sender, EventArgs e)
+   {
+    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+    saveFileDialog1.Filter = "Pliki CSV (*.csv)|*.csv|Wszystkie pliki (*.*)|*.*";
+    saveFileDialog1.Title = "Zapisz dane pracowników do pliku CSV";
+
+    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
     {
-        MessageBox.Show("Tutaj coś tam coś tam XD");
+        ZapiszDoCSV(dataGridView1, saveFileDialog1.FileName);
+    }
+   }  
+
+private void ZapiszDoCSV(DataGridView dgv, string filePath)
+{
+    try
+    {
+        var columnNames = dgv.Columns.Cast<DataGridViewColumn>()
+                            .Select(column => column.HeaderText);
+        string header = string.Join(",", columnNames);
+
+        var rows = dgv.Rows.Cast<DataGridViewRow>()
+                    .Where(row => !row.IsNewRow)
+                    .Select(row => string.Join(",", row.Cells.Cast<DataGridViewCell>()
+                                                    .Select(cell => cell.Value?.ToString() ?? "")));
+
+        string csvContent = header + Environment.NewLine + string.Join(Environment.NewLine, rows);
+
+        File.WriteAllText(filePath, csvContent);
+
+        MessageBox.Show("Dane zostały pomyślnie zapisane!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Błąd podczas zapisu: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+   private void btnOdczyt_Click(object? sender, EventArgs e)
+{
+    OpenFileDialog openFileDialog1 = new OpenFileDialog();
+    openFileDialog1.Filter = "Pliki CSV (*.csv)|*.csv|Wszystkie pliki (*.*)|*.*";
+    openFileDialog1.Title = "Wybierz plik CSV do wczytania";
+
+    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+    {
+        LoadCSVToDataGridView(openFileDialog1.FileName);
+    }
+}
+
+private void LoadCSVToDataGridView(string filePath)
+{
+    if (!File.Exists(filePath))
+    {
+        MessageBox.Show("Plik CSV nie istnieje.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
     }
 
-    private void btnOdczyt_Click(object sender, EventArgs e)
+    try
     {
-        MessageBox.Show("Tutaj coś tam coś tam XD");
+        string[] lines = File.ReadAllLines(filePath);
+
+        if (lines.Length > 0)
+        {
+            DataTable dt = new DataTable();
+            string[] headers = lines[0].Split(',');
+            foreach (string header in headers)
+            {
+                dt.Columns.Add(header.Trim());
+            }
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(lines[i]))
+                {
+                    string[] values = lines[i].Split(',');
+                    dt.Rows.Add(values);
+                }
+            }
+
+            bindingSource.DataSource = dt;
+            
+            MessageBox.Show("Dane zostały wczytane pomyślnie!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Wystąpił błąd podczas odczytu pliku: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
 }
