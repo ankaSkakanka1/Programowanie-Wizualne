@@ -39,12 +39,10 @@ public partial class Form2 : Form
         cmbStanowisko.Items.AddRange(new string[] { "Programista", "Tester", "Projektant", "Manager" });
         cmbStanowisko.SelectedIndex = 0; 
 
-        // Przycisk Zatwierdź
         btnZatwierdz.Text = "Zatwierdź";
         btnZatwierdz.Location = new Point(20, 250);
         btnZatwierdz.DialogResult = DialogResult.OK; 
 
-        // Przycisk Anuluj
         btnAnuluj.Text = "Anuluj";
         btnAnuluj.Location = new Point(140, 250);
         btnAnuluj.DialogResult = DialogResult.Cancel;
