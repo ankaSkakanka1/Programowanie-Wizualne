@@ -1,0 +1,15 @@
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\bin\Debug\net10.0-windows\EdytorObrazka.exe
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\bin\Debug\net10.0-windows\EdytorObrazka.deps.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\bin\Debug\net10.0-windows\EdytorObrazka.runtimeconfig.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\bin\Debug\net10.0-windows\EdytorObrazka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\bin\Debug\net10.0-windows\EdytorObrazka.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.AssemblyInfoInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.AssemblyInfo.cs
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.sourcelink.json
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\refint\EdytorObrazka.dll
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.pdb
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\EdytorObrazka.genruntimeconfig.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab4\EdytorObrazka\obj\Debug\net10.0-windows\ref\EdytorObrazka.dll
