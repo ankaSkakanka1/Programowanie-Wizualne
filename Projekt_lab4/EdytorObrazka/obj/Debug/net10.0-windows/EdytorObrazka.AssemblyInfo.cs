@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EdytorObrazka")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2cdc119ee70810f7993883797b9a7ab95d5604d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a647d2daca7bd0995356ebcf1f100fc124c2b96a")]
 [assembly: System.Reflection.AssemblyProductAttribute("EdytorObrazka")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EdytorObrazka")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

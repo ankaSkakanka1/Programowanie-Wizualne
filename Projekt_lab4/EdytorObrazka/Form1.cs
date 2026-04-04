@@ -12,6 +12,7 @@ public partial class Form1 : Form
     private Button btnInvert;
     private Button btnUpsideDown;
 
+    private Button btnOnlyGreen;
     public Form1()
     {
         InitializeComponent();
@@ -44,6 +45,14 @@ public partial class Form1 : Form
         btnUpsideDown.Click += (s, e) => UpsideDown();
 
         this.Controls.AddRange(new Control[] { btnInvert, btnUpsideDown });
+        btnOnlyGreen = new Button { 
+        Text = "OnlyGreen", 
+        Location = new Point(20, 280), 
+        Width = 100, 
+        BackColor = Color.LightGreen 
+        };
+        btnOnlyGreen.Click += (s, e) => onlyGreen();
+        this.Controls.Add(btnOnlyGreen);
 
         pictureBox = new PictureBox();
         pictureBox.Location = new Point(150, 20);
@@ -76,6 +85,24 @@ public partial class Form1 : Form
                 Color p = bmp.GetPixel(x, y);
                 bmp.SetPixel(x, y, Color.FromArgb(p.A, 255 - p.R, 255 - p.G, 255 - p.B));
             }
+        }
+        pictureBox.Image = bmp;
+    }
+    private void onlyGreen()
+   {
+      if (pictureBox.Image == null) return;
+       Bitmap bmp = new Bitmap(pictureBox.Image);
+
+       for (int y = 0; y < bmp.Height; y++)
+       {
+          for (int x = 0; x < bmp.Width; x++)
+          {
+             Color p = bmp.GetPixel(x, y);
+             if (!(p.G > p.R && p.G > p.B))
+             {
+                bmp.SetPixel(x, y, Color.Black);
+             }
+           }
         }
         pictureBox.Image = bmp;
     }
