@@ -9,6 +9,9 @@ public partial class Form1 : Form
     private Button btnLoad;
     private RadioButton rb90, rb180, rb270;
     private Button btnRotate;
+    private Button btnInvert;
+    private Button btnUpsideDown;
+
     public Form1()
     {
         InitializeComponent();
@@ -34,6 +37,14 @@ public partial class Form1 : Form
         btnRotate.Click += (s, e) => HandleRotation();
         this.Controls.AddRange(new Control[] { rb90, rb180, rb270, btnRotate });
 
+        btnInvert = new Button { Text = "Invert Colors", Location = new Point(20, 200), Width = 100, BackColor = Color.LightBlue };
+        btnInvert.Click += (s, e) => InvertColors();
+
+        btnUpsideDown = new Button { Text = "Upside Down", Location = new Point(20, 240), Width = 100, BackColor = Color.LightBlue };
+        btnUpsideDown.Click += (s, e) => UpsideDown();
+
+        this.Controls.AddRange(new Control[] { btnInvert, btnUpsideDown });
+
         pictureBox = new PictureBox();
         pictureBox.Location = new Point(150, 20);
         pictureBox.Size = new Size(600, 500);
@@ -51,6 +62,29 @@ public partial class Form1 : Form
         {
             pictureBox.Image = new Bitmap(openFileDialog.FileName);
         }
+    }
+
+     private void InvertColors() 
+    {
+        if (pictureBox.Image == null) return;
+        Bitmap bmp = new Bitmap(pictureBox.Image);
+
+        for (int y = 0; y < bmp.Height; y++)
+        {
+            for (int x = 0; x < bmp.Width; x++)
+            {
+                Color p = bmp.GetPixel(x, y);
+                bmp.SetPixel(x, y, Color.FromArgb(p.A, 255 - p.R, 255 - p.G, 255 - p.B));
+            }
+        }
+        pictureBox.Image = bmp;
+    }
+
+    private void UpsideDown() 
+    {
+        if (pictureBox.Image == null) return;
+        pictureBox.Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
+        pictureBox.Refresh();
     }
 
     private void HandleRotation()
