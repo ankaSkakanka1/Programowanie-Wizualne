@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOsoba xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Osoba>
+    <ID>1</ID>
+    <Imie>Anna</Imie>
+    <Nazwisko>R</Nazwisko>
+    <Wiek>18</Wiek>
+    <Stanowisko>Programista</Stanowisko>
+  </Osoba>
+  <Osoba>
+    <ID>2</ID>
+    <Imie>Ola</Imie>
+    <Nazwisko>N</Nazwisko>
+    <Wiek>22</Wiek>
+    <Stanowisko>Projektant</Stanowisko>
+  </Osoba>
+</ArrayOfOsoba>

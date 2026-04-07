@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Data; 
 using System.IO;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace GridView;
 public partial class Form1 : Form 
@@ -14,6 +15,7 @@ public partial class Form1 : Form
     private Button btnUsun = new Button();
     private Button btnZapis = new Button();
     private Button btnOdczyt = new Button();
+    private Button btnXML = new Button();
 
 
     public Form1()
@@ -60,6 +62,12 @@ public partial class Form1 : Form
         btnOdczyt.Size = new Size(100, 30);
         btnOdczyt.Click += new EventHandler(btnOdczyt_Click); // Przypisanie akcji 
         this.Controls.Add(btnOdczyt);
+
+        btnXML.Text = "Zapis XML";
+        btnXML.Location = new Point(450, 320);
+        btnXML.Size = new Size(100, 30);
+        btnXML.Click += btnXML_Click;
+        this.Controls.Add(btnXML);
 
     }
 
@@ -182,5 +190,41 @@ private void LoadCSVToDataGridView(string filePath)
     {
         MessageBox.Show("Wystąpił błąd podczas odczytu pliku: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
+}
+
+private List<Osoba> PobierzOsoby()
+{
+    List<Osoba> lista = new List<Osoba>();
+
+    foreach (DataGridViewRow row in dataGridView1.Rows)
+    {
+        if (!row.IsNewRow)
+        {
+            lista.Add(new Osoba
+            {
+                ID = Convert.ToInt32(row.Cells["ID"].Value),
+                Imie = row.Cells["Imie"].Value.ToString(),
+                Nazwisko = row.Cells["Nazwisko"].Value.ToString(),
+                Wiek = Convert.ToInt32(row.Cells["Wiek"].Value),
+                Stanowisko = row.Cells["Stanowisko"].Value.ToString()
+            });
+        }
+    }
+
+    return lista;
+}
+
+private void btnXML_Click(object sender, EventArgs e)
+{
+    List<Osoba> osoby = PobierzOsoby();
+
+    XmlSerializer serializer = new XmlSerializer(typeof(List<Osoba>));
+
+    using (FileStream fs = new FileStream("osoby.xml", FileMode.Create))
+    {
+        serializer.Serialize(fs, osoby);
+    }
+
+    MessageBox.Show("Zapisano do XML!");
 }
 }
