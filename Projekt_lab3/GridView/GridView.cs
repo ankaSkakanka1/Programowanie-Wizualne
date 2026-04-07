@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Data; 
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace GridView;
 public partial class Form1 : Form 
@@ -14,6 +15,7 @@ public partial class Form1 : Form
     private Button btnUsun = new Button();
     private Button btnZapis = new Button();
     private Button btnOdczyt = new Button();
+    private Button btnJSON = new Button();
 
 
     public Form1()
@@ -60,6 +62,12 @@ public partial class Form1 : Form
         btnOdczyt.Size = new Size(100, 30);
         btnOdczyt.Click += new EventHandler(btnOdczyt_Click); // Przypisanie akcji 
         this.Controls.Add(btnOdczyt);
+
+        btnJSON.Text = "Zapis JSON";
+        btnJSON.Location = new Point(570, 320);
+        btnJSON.Size = new Size(100,30);
+        btnJSON.Click += btnJSON_Click;
+        this.Controls.Add(btnJSON);
 
     }
 
@@ -182,5 +190,38 @@ private void LoadCSVToDataGridView(string filePath)
     {
         MessageBox.Show("Wystąpił błąd podczas odczytu pliku: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
+}
+
+private List<Osoba> PobierzOsoby()
+{
+    List<Osoba> lista = new List<Osoba>();
+
+    foreach (DataGridViewRow row in dataGridView1.Rows)
+    {
+        if (!row.IsNewRow)
+        {
+            lista.Add(new Osoba
+            {
+                ID = Convert.ToInt32(row.Cells["ID"].Value),
+                Imie = row.Cells["Imie"].Value.ToString(),
+                Nazwisko = row.Cells["Nazwisko"].Value.ToString(),
+                Wiek = Convert.ToInt32(row.Cells["Wiek"].Value),
+                Stanowisko = row.Cells["Stanowisko"].Value.ToString()
+            });
+        }
+    }
+
+    return lista;
+}
+
+private void btnJSON_Click(object sender, EventArgs e)
+{
+    List<Osoba> osoby = PobierzOsoby();
+
+    string json = JsonSerializer.Serialize(osoby);
+
+    File.WriteAllText("osoby.json", json);
+
+    MessageBox.Show("Zapisano do JSON!");
 }
 }
