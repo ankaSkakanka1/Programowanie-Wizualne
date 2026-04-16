@@ -1,0 +1,5 @@
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab6\ProstaGra\obj\Debug\net10.0-windows\ProstaGra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab6\ProstaGra\obj\Debug\net10.0-windows\ProstaGra.AssemblyInfoInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab6\ProstaGra\obj\Debug\net10.0-windows\ProstaGra.AssemblyInfo.cs
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab6\ProstaGra\obj\Debug\net10.0-windows\ProstaGra.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10\Desktop\Programowanie\Programowanie Wizualne\Programowanie-Wizualne-1\Projekt_lab6\ProstaGra\obj\Debug\net10.0-windows\ProstaGra.sourcelink.json
