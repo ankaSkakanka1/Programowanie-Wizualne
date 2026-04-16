@@ -1,139 +1,71 @@
 using System;
 using System.Windows.Forms;
 
-namespace ProstaGra{
-
-public partial class Form1 : Form
+namespace ProstaGra
 {
-    public Form1()
+    public partial class Form1 : Form
     {
-        InitializeComponent();
-    }
+        NumericUpDown numWidth, numHeight, numTime, numDydelf, numRaccoon, numCroc;
+        Button btnStart, btnExit;
 
-     private void btnStart_Click(object sender, EventArgs e)
+        public Form1()
         {
-            int width = (int)numWidth.Value;
-            int height = (int)numHeight.Value;
-            int time = (int)numTime.Value;
-            int dydelfs = (int)numDydelf.Value;
-            int raccoons = (int)numRaccoon.Value;
-            int crocs = (int)numCroc.Value;
+            this.Text = "Menu";
+            this.Width = 300;
+            this.Height = 350;
 
-            OknoGry game = new OknoGry(width, height, time, dydelfs, raccoons, crocs);
+            InitUI();
+        }
+
+        private void InitUI()
+        {
+            Label l1 = new Label() { Text = "Width", Top = 20, Left = 10 };
+            numWidth = new NumericUpDown() { Top = 20, Left = 120, Minimum = 3, Maximum = 10, Value = 5 };
+
+            Label l2 = new Label() { Text = "Height", Top = 50, Left = 10 };
+            numHeight = new NumericUpDown() { Top = 50, Left = 120, Minimum = 3, Maximum = 10, Value = 5 };
+
+            Label l3 = new Label() { Text = "Time", Top = 80, Left = 10 };
+            numTime = new NumericUpDown() { Top = 80, Left = 120, Minimum = 10, Maximum = 60, Value = 30 };
+
+            Label l4 = new Label() { Text = "Dydelfs", Top = 110, Left = 10 };
+            numDydelf = new NumericUpDown() { Top = 110, Left = 120, Minimum = 1, Maximum = 6, Value = 2 };
+
+            Label l5 = new Label() { Text = "Raccoons", Top = 140, Left = 10 };
+            numRaccoon = new NumericUpDown() { Top = 140, Left = 120, Minimum = 3, Maximum = 8, Value = 3 };
+
+            Label l6 = new Label() { Text = "Crocs", Top = 170, Left = 10 };
+            numCroc = new NumericUpDown() { Top = 170, Left = 120, Minimum = 0, Maximum = 1, Value = 1 };
+
+            btnStart = new Button() { Text = "Start", Top = 220, Left = 40 };
+            btnExit = new Button() { Text = "Exit", Top = 220, Left = 140 };
+
+            btnStart.Click += BtnStart_Click;
+            btnExit.Click += (s, e) => Application.Exit();
+
+            this.Controls.AddRange(new Control[] {
+                l1, numWidth,
+                l2, numHeight,
+                l3, numTime,
+                l4, numDydelf,
+                l5, numRaccoon,
+                l6, numCroc,
+                btnStart, btnExit
+            });
+        }
+
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+            OknoGry game = new OknoGry(
+                (int)numWidth.Value,
+                (int)numHeight.Value,
+                (int)numTime.Value,
+                (int)numDydelf.Value,
+                (int)numRaccoon.Value,
+                (int)numCroc.Value
+            );
+
             game.Show();
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void GenerateBoard(int dydelfs, int raccoons, int crocs)
-       {
-            Random rand = new Random();
-
-    // Puste pola
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    board[i, j] = "empty";
-                }
-            }
-
-            PlaceRandom("dydelf", dydelfs, rand);
-            PlaceRandom("raccoon", raccoons, rand);
-            PlaceRandom("croc", crocs, rand);
-        }
-
-        private void PlaceRandom(string type, int count, Random rand)
-        {
-            while (count > 0)
-            {
-               int x = rand.Next(width);
-               int y = rand.Next(height);
-
-            if (board[x, y] == "empty")
-            {
-               board[x, y] = type;
-               count--;
-            }
-            }
-        }
-
-        private void CreateButtons()
-        {
-           int size = 50;
-
-           for (int i = 0; i < width; i++)
-           {
-             for (int j = 0; j < height; j++)
-             {
-                 Button btn = new Button();
-                 btn.Width = size;
-                 btn.Height = size;
-                 btn.Left = i * size;
-                 btn.Top = j * size;
-                 btn.Tag = new Point(i, j);
-
-                 btn.Click += Button_Click;
-
-                 buttons[i, j] = btn;
-                 this.Controls.Add(btn);
-             }
-           }
-        }
-
-        private async void Button_Click(object sender, EventArgs e)
-        {
-           Button btn = sender as Button;
-           Point p = (Point)btn.Tag;
-
-           string value = board[p.X, p.Y];
-
-           btn.Enabled = false;
-
-           if (value == "dydelf")
-           {
-              btn.Text = "D";
-           }
-           else if (value == "raccoon")
-          {
-              btn.Text = "R";
-
-              await System.Threading.Tasks.Task.Delay(2000);
-
-              btn.Text = "";
-              btn.Enabled = true;
-          }
-           else if (value == "croc")
-          {
-            btn.Text = "C";
-
-            await System.Threading.Tasks.Task.Delay(2000);
-
-            MessageBox.Show("Przegrałeś! Krokodyl!");
-            this.Close();
-          }
-           else
-          {
-            btn.Text = "";
-          }
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-       {
-          timeLeft--;
-
-          this.Text = "Czas: " + timeLeft;
-
-          if (timeLeft <= 0)
-          {
-            timer.Stop();
-            MessageBox.Show("Koniec czasu!");
-            this.Close();
-          }
-        }
- }
- }
- 
+    }
+}
