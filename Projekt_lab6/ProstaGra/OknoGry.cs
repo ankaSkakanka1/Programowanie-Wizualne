@@ -4,20 +4,21 @@ using System.Windows.Forms;
 
 namespace ProstaGra
 {
-    public partial class OknoGry : Form
+    public class OknoGry : Form
     {
         int width, height, timeLeft;
         string[,] board;
         Button[,] buttons;
-        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer timer;
 
         public OknoGry(int width, int height, int time, int dydelfs, int raccoons, int crocs)
         {
-            InitializeComponent();
+            this.width = width;
+            this.height = height;
+            this.timeLeft = time;
 
-            width = w;
-            height = h;
-            timeLeft = time;
+            this.Width = width * 50 + 20;
+            this.Height = height * 50 + 40;
 
             board = new string[width, height];
             buttons = new Button[width, height];
@@ -25,23 +26,19 @@ namespace ProstaGra
             GenerateBoard(dydelfs, raccoons, crocs);
             CreateButtons();
 
+            timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Start();
         }
 
-         private void GenerateBoard(int dydelfs, int raccoons, int crocs)
-       {
+        private void GenerateBoard(int dydelfs, int raccoons, int crocs)
+        {
             Random rand = new Random();
 
-    // Puste pola
             for (int i = 0; i < width; i++)
-            {
                 for (int j = 0; j < height; j++)
-                {
                     board[i, j] = "empty";
-                }
-            }
 
             PlaceRandom("dydelf", dydelfs, rand);
             PlaceRandom("raccoon", raccoons, rand);
@@ -52,90 +49,81 @@ namespace ProstaGra
         {
             while (count > 0)
             {
-               int x = rand.Next(width);
-               int y = rand.Next(height);
+                int x = rand.Next(width);
+                int y = rand.Next(height);
 
-            if (board[x, y] == "empty")
-            {
-               board[x, y] = type;
-               count--;
-            }
+                if (board[x, y] == "empty")
+                {
+                    board[x, y] = type;
+                    count--;
+                }
             }
         }
 
         private void CreateButtons()
         {
-           int size = 50;
+            int size = 50;
 
-           for (int i = 0; i < width; i++)
-           {
-             for (int j = 0; j < height; j++)
-             {
-                 Button btn = new Button();
-                 btn.Width = size;
-                 btn.Height = size;
-                 btn.Left = i * size;
-                 btn.Top = j * size;
-                 btn.Tag = new Point(i, j);
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    Button btn = new Button();
+                    btn.Width = size;
+                    btn.Height = size;
+                    btn.Left = i * size;
+                    btn.Top = j * size;
+                    btn.Tag = new Point(i, j);
 
-                 btn.Click += Button_Click;
+                    btn.Click += Button_Click;
 
-                 buttons[i, j] = btn;
-                 this.Controls.Add(btn);
-             }
-           }
+                    buttons[i, j] = btn;
+                    this.Controls.Add(btn);
+                }
+            }
         }
 
         private async void Button_Click(object sender, EventArgs e)
         {
-           Button btn = sender as Button;
-           Point p = (Point)btn.Tag;
+            Button btn = sender as Button;
+            if (btn == null) return;
 
-           string value = board[p.X, p.Y];
+            Point p = (Point)btn.Tag;
+            string value = board[p.X, p.Y];
 
-           btn.Enabled = false;
+            btn.Enabled = false;
 
-           if (value == "dydelf")
-           {
-              btn.Text = "D";
-           }
-           else if (value == "raccoon")
-          {
-              btn.Text = "R";
-
-              await System.Threading.Tasks.Task.Delay(2000);
-
-              btn.Text = "";
-              btn.Enabled = true;
-          }
-           else if (value == "croc")
-          {
-            btn.Text = "C";
-
-            await System.Threading.Tasks.Task.Delay(2000);
-
-            MessageBox.Show("Przegrałeś! Krokodyl!");
-            this.Close();
-          }
-           else
-          {
-            btn.Text = "";
-          }
+            if (value == "dydelf")
+            {
+                btn.Text = "D";
+            }
+            else if (value == "raccoon")
+            {
+                btn.Text = "R";
+                await System.Threading.Tasks.Task.Delay(2000);
+                btn.Text = "";
+                btn.Enabled = true;
+            }
+            else if (value == "croc")
+            {
+                btn.Text = "C";
+                await System.Threading.Tasks.Task.Delay(2000);
+                MessageBox.Show("Przegrałeś!");
+                this.Close();
+            }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
-       {
-          timeLeft--;
+        {
+            timeLeft--;
+            this.Text = "Czas: " + timeLeft;
 
-          this.Text = "Czas: " + timeLeft;
-
-          if (timeLeft <= 0)
-          {
-            timer.Stop();
-            MessageBox.Show("Koniec czasu!");
-            this.Close();
-          }
+            if (timeLeft <= 0)
+            {
+                timer.Stop();
+                MessageBox.Show("Koniec czasu!");
+                this.Close();
+            }
         }
-        
     }
 }
