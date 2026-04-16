@@ -6,7 +6,7 @@ namespace ProstaGra
     public partial class Form1 : Form
     {
         NumericUpDown numWidth, numHeight, numTime, numDydelf, numRaccoon, numCroc;
-        Button btnStart, btnExit;
+        Button btnStart;
 
         public Form1()
         {
@@ -38,10 +38,8 @@ namespace ProstaGra
             numCroc = new NumericUpDown() { Top = 170, Left = 120, Minimum = 0, Maximum = 1, Value = 1 };
 
             btnStart = new Button() { Text = "Start", Top = 220, Left = 40 };
-            btnExit = new Button() { Text = "Exit", Top = 220, Left = 140 };
 
             btnStart.Click += BtnStart_Click;
-            btnExit.Click += (s, e) => Application.Exit();
 
             this.Controls.AddRange(new Control[] {
                 l1, numWidth,
@@ -50,7 +48,7 @@ namespace ProstaGra
                 l4, numDydelf,
                 l5, numRaccoon,
                 l6, numCroc,
-                btnStart, btnExit
+                btnStart
             });
         }
 
@@ -66,6 +64,7 @@ namespace ProstaGra
             );
 
             game.Show();
+            this.Close();
         }
     }
 }
