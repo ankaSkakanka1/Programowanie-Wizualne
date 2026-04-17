@@ -12,12 +12,16 @@ namespace ProstaGra
         System.Windows.Forms.Timer timer;
         Button activeCrocButton = null;
         bool crocActive = false;
+        int foundDydelfs = 0;
+        int totalDydelfs = 0;
 
         public OknoGry(int width, int height, int time, int dydelfs, int raccoons, int crocs)
         {
             this.width = width;
             this.height = height;
             this.timeLeft = time;
+            this.totalDydelfs = dydelfs;
+            this.foundDydelfs = 0;
 
             this.Width = width * 50 + 20;
             this.Height = height * 50 + 40;
@@ -87,6 +91,7 @@ namespace ProstaGra
 
        private async void Button_Click(object sender, EventArgs e)
        {  
+
           Button btn = sender as Button;
           if (btn == null) return;
 
@@ -104,13 +109,25 @@ namespace ProstaGra
 
            return;
          }
+
+          if (btn.Text != "") return;
           
           if(value != "croc")
           btn.Enabled = false;
 
           if (value == "dydelf")
          {
-           btn.Text = "D";
+            btn.Text = "D";
+            foundDydelfs++;
+
+    
+           if (foundDydelfs == totalDydelfs)
+           {
+             timer.Stop();
+             MessageBox.Show("Wygrałeś! 🎉");
+
+             this.Close();
+           }
          }
           else if (value == "raccoon")
          {
@@ -140,7 +157,7 @@ namespace ProstaGra
         private void Timer_Tick(object sender, EventArgs e)
         {
             timeLeft--;
-            this.Text = "Czas: " + timeLeft;
+            this.Text = $"Czas: {timeLeft} | Dydelfy: {foundDydelfs}/{totalDydelfs}";
 
             if (timeLeft <= 0)
             {

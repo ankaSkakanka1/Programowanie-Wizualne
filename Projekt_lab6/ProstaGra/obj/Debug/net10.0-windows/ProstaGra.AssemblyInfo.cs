@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProstaGra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c061171662d8e07ce12bbbe96f1fe9127cf43a41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f80e5f72cd160cc33c709f2ea15aa1269c3add69")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProstaGra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProstaGra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
