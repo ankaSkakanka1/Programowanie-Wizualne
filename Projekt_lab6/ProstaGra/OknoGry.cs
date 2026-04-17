@@ -10,6 +10,8 @@ namespace ProstaGra
         string[,] board;
         Button[,] buttons;
         System.Windows.Forms.Timer timer;
+        Button activeCrocButton = null;
+        bool crocActive = false;
 
         public OknoGry(int width, int height, int time, int dydelfs, int raccoons, int crocs)
         {
@@ -83,34 +85,56 @@ namespace ProstaGra
             }
         }
 
-        private async void Button_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn == null) return;
+       private async void Button_Click(object sender, EventArgs e)
+       {  
+          Button btn = sender as Button;
+          if (btn == null) return;
 
-            Point p = (Point)btn.Tag;
-            string value = board[p.X, p.Y];
+          Point p = (Point)btn.Tag;
+          string value = board[p.X, p.Y];
 
-            btn.Enabled = false;
+    
+          if (crocActive && btn == activeCrocButton)
+         {
+            btn.Text = "";
+            btn.Enabled = true;
 
-            if (value == "dydelf")
-            {
-                btn.Text = "D";
-            }
-            else if (value == "raccoon")
-            {
-                btn.Text = "R";
-                await System.Threading.Tasks.Task.Delay(2000);
-                btn.Text = "";
-                btn.Enabled = true;
-            }
-            else if (value == "croc")
-            {
-                btn.Text = "C";
-                await System.Threading.Tasks.Task.Delay(2000);
-                MessageBox.Show("Przegrałeś!");
-                this.Close();
-            }
+            crocActive = false;
+            activeCrocButton = null;
+
+           return;
+         }
+          
+          if(value != "croc")
+          btn.Enabled = false;
+
+          if (value == "dydelf")
+         {
+           btn.Text = "D";
+         }
+          else if (value == "raccoon")
+         {
+           btn.Text = "R";
+
+           await System.Threading.Tasks.Task.Delay(2000);
+           CloseNeighbors(p.X, p.Y);
+         }
+          else if (value == "croc")
+         {
+           btn.Text = "C";
+
+           crocActive = true;
+           activeCrocButton = btn;
+
+           await System.Threading.Tasks.Task.Delay(2000);
+
+        
+           if (crocActive)
+           {
+              MessageBox.Show("Przegrałeś! Krokodyl!");
+              this.Close();
+           }
+          }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -124,6 +148,26 @@ namespace ProstaGra
                 MessageBox.Show("Koniec czasu!");
                 this.Close();
             }
+        }
+
+        private void CloseNeighbors(int x, int y)
+       {
+          for (int i = -1; i <= 1; i++)
+          {
+            for (int j = -1; j <= 1; j++)
+            {
+               int nx = x + i;
+               int ny = y + j;
+
+               if (nx >= 0 && nx < width && ny >= 0 && ny < height)
+               {
+                  Button neighbor = buttons[nx, ny];
+
+                  neighbor.Text = "";
+                  neighbor.Enabled = true; // można kliknąć ponownie
+               }
+            }
+          }
         }
     }
 }
