@@ -27,7 +27,14 @@ namespace ProstaGra
         private void BtnStart_Click(object sender, EventArgs e)
         {
             // Start z domyślnymi wartościami
-            OknoGry game = new OknoGry(5, 5, 30, 2, 3, 1);
+            OknoGry game = new OknoGry(
+                Ustawienia.Width,
+                Ustawienia.Height,
+                Ustawienia.Time,
+                Ustawienia.Dydelfs,
+                Ustawienia.Raccoons,
+                Ustawienia.Crocs
+            );
             game.Show();
         }
 

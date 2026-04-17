@@ -37,7 +37,7 @@ namespace ProstaGra
             Label l6 = new Label() { Text = "Crocs", Top = 170, Left = 10 };
             numCroc = new NumericUpDown() { Top = 170, Left = 120, Minimum = 0, Maximum = 1, Value = 1 };
 
-            btnStart = new Button() { Text = "Start", Top = 220, Left = 40 };
+            btnStart = new Button() { Text = "Zapisz", Top = 220, Left = 40 };
 
             btnStart.Click += BtnStart_Click;
 
@@ -55,12 +55,12 @@ namespace ProstaGra
         private void BtnStart_Click(object sender, EventArgs e)
         {
             OknoGry game = new OknoGry(
-                (int)numWidth.Value,
-                (int)numHeight.Value,
-                (int)numTime.Value,
-                (int)numDydelf.Value,
-                (int)numRaccoon.Value,
-                (int)numCroc.Value
+                Ustawienia.Width = (int)numWidth.Value,
+                Ustawienia.Height = (int)numHeight.Value,
+                Ustawienia.Time = (int)numTime.Value,
+                Ustawienia.Dydelfs = (int)numDydelf.Value,
+                Ustawienia.Raccoons = (int)numRaccoon.Value,
+                Ustawienia.Crocs = (int)numCroc.Value
             );
 
             game.Show();
