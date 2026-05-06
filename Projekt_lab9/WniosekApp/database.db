@@ -1,0 +1,10 @@
+CREATE TABLE Wnioski (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ImieNazwisko TEXT,
+    NumerAlbumu TEXT,
+    Semestr TEXT,
+    Kierunek TEXT,
+    Przedmiot TEXT,
+    Prowadzacy TEXT,
+    Uzasadnienie TEXT
+);
