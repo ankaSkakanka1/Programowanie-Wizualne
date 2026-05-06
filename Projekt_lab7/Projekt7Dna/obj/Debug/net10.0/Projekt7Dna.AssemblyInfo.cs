@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projekt7Dna")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a56e2bfc0d3ce10531cc392aa8621175d2eb1825")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4ac4fb6f141786eaabe8e7e6300ebdff06b9d64")]
 [assembly: System.Reflection.AssemblyProductAttribute("Projekt7Dna")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Projekt7Dna")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
