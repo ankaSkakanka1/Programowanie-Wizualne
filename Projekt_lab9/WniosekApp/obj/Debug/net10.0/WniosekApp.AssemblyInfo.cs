@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WniosekApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62d0533467165b47c7ce953ae466a91ea5fb87dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9734896f3e48e2239b0a392d58429c51dcd0e299")]
 [assembly: System.Reflection.AssemblyProductAttribute("WniosekApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WniosekApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
