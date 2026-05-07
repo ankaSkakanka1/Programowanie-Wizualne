@@ -53,8 +53,10 @@ public class Database
         string rokStudiow, string formaStudiow, string przedmiot, string prowadzacy,
         string dataEgzaminu, string ocena, string uzasadnienie, string dataWniosku)
     {
+        Console.WriteLine("Próba zapisu do bazy...");
         using var conn = new SqliteConnection(connectionString);
         conn.Open();
+        Console.WriteLine("Połączenie otwarte.");
 
         string query = @"INSERT INTO Wnioski
         (ImieNazwisko, NumerAlbumu, Kierunek, Specjalnosc, RokStudiow, FormaStudiow, Przedmiot, Prowadzacy, DataEgzaminu, Ocena, Uzasadnienie, DataWniosku)
@@ -75,14 +77,17 @@ public class Database
         cmd.Parameters.AddWithValue("@dw", dataWniosku);
 
         cmd.ExecuteNonQuery();
+        Console.WriteLine("Zapis zakończony.");
     }
 
     public List<string> ReadAll()
     {
+        Console.WriteLine("Próba odczytu z bazy...");
         var results = new List<string>();
 
         using var conn = new SqliteConnection(connectionString);
         conn.Open();
+        Console.WriteLine("Połączenie otwarte dla odczytu.");
 
         string query = "SELECT * FROM Wnioski ORDER BY Id DESC";
 
@@ -93,7 +98,7 @@ public class Database
         {
             results.Add($"{reader["ImieNazwisko"]} | {reader["NumerAlbumu"]} | {reader["Kierunek"]} | {reader["Specjalnosc"]} | {reader["RokStudiow"]} | {reader["FormaStudiow"]} | {reader["Przedmiot"]} | {reader["Prowadzacy"]} | {reader["DataEgzaminu"]} | {reader["Ocena"]} | {reader["Uzasadnienie"]} | {reader["DataWniosku"]}");
         }
-
+        Console.WriteLine($"Odczyt zakończony, {results.Count} wniosków.");
         return results;
     }
 }

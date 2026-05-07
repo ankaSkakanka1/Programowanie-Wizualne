@@ -40,15 +40,7 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            // Pokaż błąd użytkownikowi
-            var dialog = new Window
-            {
-                Title = "Błąd",
-                Content = $"Wystąpił błąd podczas zapisywania: {ex.Message}",
-                Width = 400,
-                Height = 200
-            };
-            dialog.ShowDialog(this);
+            Console.WriteLine($"Błąd podczas zapisywania: {ex.Message}");
         }
     }
 
@@ -85,15 +77,7 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            // Pokaż błąd użytkownikowi
-            var dialog = new Window
-            {
-                Title = "Błąd",
-                Content = $"Wystąpił błąd podczas ładowania danych: {ex.Message}",
-                Width = 400,
-                Height = 200
-            };
-            dialog.ShowDialog(this);
+            Console.WriteLine($"Błąd podczas ładowania danych: {ex.Message}");
         }
     }
 }
