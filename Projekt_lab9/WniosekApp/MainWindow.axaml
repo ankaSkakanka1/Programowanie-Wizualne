@@ -2,8 +2,74 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="700"
         x:Class="WniosekApp.MainWindow"
-        Title="WniosekApp">
-    Welcome to Avalonia!
+        Title="Wniosek o egzamin komisyjny">
+
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="10">
+            <TextBlock Text="Wniosek o egzamin komisyjny" FontSize="22" FontWeight="Bold"/>
+            <TextBlock Text="Uzupełnij wszystkie pola wniosku i zapisz dane." FontSize="14" Opacity="0.8"/>
+
+            <StackPanel Spacing="8">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Imię i nazwisko:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="ImieNazwisko" Width="480" PlaceholderText="Imię i nazwisko"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Numer albumu:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="NumerAlbumu" Width="480" PlaceholderText="Numer albumu"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Kierunek:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="Kierunek" Width="480" PlaceholderText="Kierunek"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Specjalność:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="Specjalnosc" Width="480" PlaceholderText="Specjalność"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Rok studiów:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="RokStudiow" Width="480" PlaceholderText="Rok studiów"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Forma studiów:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="FormaStudiow" Width="480" PlaceholderText="Stacjonarne / niestacjonarne"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Przedmiot:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="Przedmiot" Width="480" PlaceholderText="Przedmiot"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Prowadzący:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="Prowadzacy" Width="480" PlaceholderText="Prowadzący"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Data egzaminu:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="DataEgzaminu" Width="480" PlaceholderText="Data egzaminu"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Ocena uzyskana:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="Ocena" Width="480" PlaceholderText="Ocena uzyskana"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Data wniosku:" Width="170" VerticalAlignment="Center"/>
+                    <TextBox Name="DataWniosku" Width="480" PlaceholderText="Data złożenia wniosku"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Uzasadnienie:" Width="170" VerticalAlignment="Top"/>
+                    <TextBox Name="Uzasadnienie" Width="480" Height="120" AcceptsReturn="True" TextWrapping="Wrap" PlaceholderText="Uzasadnienie prośby"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,10,0,0">
+                <Button Content="Zapisz wniosek" Click="OnSave" Width="140"/>
+                <Button Content="Pokaż dane" Click="OnRead" Width="120"/>
+                <Button Content="Wyczyść formularz" Click="OnClear" Width="150"/>
+            </StackPanel>
+
+            <TextBlock Text="Zapisane wnioski:" FontSize="16" FontWeight="Bold" Margin="0,20,0,0"/>
+            <ListBox Name="RequestsList" Height="240"/>
+        </StackPanel>
+    </ScrollViewer>
 </Window>

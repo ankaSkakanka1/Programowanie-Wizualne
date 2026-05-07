@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eY2qRnSYk9o=",
+  "dgSpecHash": "MD3758HB5E4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\Projekt_lab9\\WniosekApp\\WniosekApp.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,8 @@
     "C:\\Users\\Windows 10\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\8.3.1.3\\harfbuzzsharp.nativeassets.webassembly.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.3\\harfbuzzsharp.nativeassets.win32.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\microcom.runtime\\0.11.4\\microcom.runtime.0.11.4.nupkg.sha512",
+    "C:\\Users\\Windows 10\\.nuget\\packages\\microsoft.data.sqlite\\9.0.0\\microsoft.data.sqlite.9.0.0.nupkg.sha512",
+    "C:\\Users\\Windows 10\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.0\\microsoft.data.sqlite.core.9.0.0.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
@@ -33,7 +35,10 @@
     "C:\\Users\\Windows 10\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.119.3-preview.1.1\\skiasharp.nativeassets.macos.3.119.3-preview.1.1.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\skiasharp.nativeassets.webassembly\\3.119.3-preview.1.1\\skiasharp.nativeassets.webassembly.3.119.3-preview.1.1.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.119.3-preview.1.1\\skiasharp.nativeassets.win32.3.119.3-preview.1.1.nupkg.sha512",
-    "C:\\Users\\Windows 10\\.nuget\\packages\\system.data.sqlite\\2.0.3\\system.data.sqlite.2.0.3.nupkg.sha512",
+    "C:\\Users\\Windows 10\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.10\\sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
+    "C:\\Users\\Windows 10\\.nuget\\packages\\sqlitepclraw.core\\2.1.10\\sqlitepclraw.core.2.1.10.nupkg.sha512",
+    "C:\\Users\\Windows 10\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.10\\sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
+    "C:\\Users\\Windows 10\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.10\\sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\tmds.dbus.protocol\\0.92.0\\tmds.dbus.protocol.0.92.0.nupkg.sha512"
   ],
   "logs": []

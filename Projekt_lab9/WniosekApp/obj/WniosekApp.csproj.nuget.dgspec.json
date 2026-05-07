@@ -64,9 +64,9 @@
               "target": "Package",
               "version": "[2.2.1, )"
             },
-            "System.Data.SQLite": {
+            "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[2.0.3, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
