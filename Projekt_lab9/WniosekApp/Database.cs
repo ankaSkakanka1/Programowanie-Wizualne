@@ -29,7 +29,11 @@ public class Database
         using var conn = new SqliteConnection(connectionString);
         conn.Open();
 
-        string query = @"CREATE TABLE IF NOT EXISTS Wnioski (
+        string dropQuery = "DROP TABLE IF EXISTS Wnioski";
+        using var dropCmd = new SqliteCommand(dropQuery, conn);
+        dropCmd.ExecuteNonQuery();
+
+        string query = @"CREATE TABLE Wnioski (
             Id INTEGER PRIMARY KEY AUTOINCREMENT,
             ImieNazwisko TEXT,
             NumerAlbumu TEXT,
