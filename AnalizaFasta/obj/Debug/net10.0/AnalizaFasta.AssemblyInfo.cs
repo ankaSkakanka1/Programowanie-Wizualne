@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnalizaFasta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba3237f15b97a22782ff363f4772f0ee6c3ca5ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e58e7bae92f706ae3664753adc30ce434cd477df")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnalizaFasta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnalizaFasta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
