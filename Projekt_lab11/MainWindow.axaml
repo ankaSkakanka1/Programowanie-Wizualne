@@ -1,9 +1,37 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Projekt_lab11.MainWindow"
-        Title="Projekt_lab11">
-    Welcome to Avalonia!
+        x:Class="BioManager.Views.MainWindow"
+        Title="Menedżer Próbek Biologicznych" Width="800" Height="500">
+    
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Left" Width="250" Spacing="10">
+            <TextBlock Text="Dane próbki" FontWeight="Bold"/>
+            <TextBox Watermark="ID Próbki" Text="{Binding NewSample.Id}"/>
+            <TextBox Watermark="Nazwa" Text="{Binding NewSample.Name}"/>
+            <ComboBox SelectedIndex="0" SelectedItem="{Binding NewSample.Type}">
+                <ComboBoxItem>DNA</ComboBoxItem>
+                <ComboBoxItem>RNA</ComboBoxItem>
+                <ComboBoxItem>Białko</ComboBoxItem>
+                <ComboBoxItem>Inny</ComboBoxItem>
+            </ComboBox>
+            <DatePicker SelectedDate="{Binding NewSample.CollectionDate}"/>
+            <TextBox Watermark="Opis" Height="60" AcceptsReturn="True" Text="{Binding NewSample.Description}"/>
+            <Button Content="Dodaj Próbkę" Command="{Binding AddSampleCommand}" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+
+        <DataGrid Margin="10,0,0,0" ItemsSource="{Binding Samples}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Typ" Binding="{Binding Type}"/>
+                <DataGridTemplateColumn Header="Akcje">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="QR" Command="{Binding DataContext.ExportQrCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Window>

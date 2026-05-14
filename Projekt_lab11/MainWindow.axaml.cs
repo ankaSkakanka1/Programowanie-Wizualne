@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace Projekt_lab11;
+namespace BioManager.Views;
 
 public partial class MainWindow : Window
 {
