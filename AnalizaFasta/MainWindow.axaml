@@ -1,0 +1,93 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        x:Class="AnalizaFasta.MainWindow"
+        Title="AnalizaFasta - Analiza sekwencji FASTA"
+        Width="1200" Height="800">
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="300,*">
+        <!-- Toolbar -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10" Spacing="10">
+            <Button Name="LoadButton" Content="📂 Wczytaj plik" Click="LoadButton_Click" Padding="10,5"/>
+            <Button Name="ExportCsvButton" Content="💾 Eksport CSV" Click="ExportCsvButton_Click" Padding="10,5"/>
+            <Button Name="ExportTxtButton" Content="💾 Eksport TXT" Click="ExportTxtButton_Click" Padding="10,5"/>
+            <TextBlock Name="StatusText" VerticalAlignment="Center" Foreground="Green"/>
+        </StackPanel>
+
+        <!-- Left Panel - Sequences List -->
+        <Border Grid.Row="1" Grid.Column="0" Margin="10" BorderBrush="LightGray" BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="Sekwencje" FontWeight="Bold" FontSize="14" Margin="10"/>
+                <ListBox Name="SequencesList" SelectionChanged="SequencesList_SelectionChanged" Margin="10"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Right Panel - Details and Chart -->
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <StackPanel Margin="10" Spacing="10">
+                <!-- Details Panel -->
+                <Border BorderBrush="LightGray" BorderThickness="1">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Szczegóły wybranej sekwencji" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nazwa:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Name="DetailName" Margin="10,0,0,0"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Nagłówek:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Name="DetailHeader" TextWrapping="Wrap" Margin="10,0,0,0"/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Długość:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Name="DetailLength" Margin="10,0,0,0"/>
+                            
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Zawartość GC:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Name="DetailGC" Margin="10,0,0,0"/>
+                            
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Kodony:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="4" Grid.Column="1" Name="DetailCodons" Margin="10,0,0,0"/>
+                            
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Format:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="5" Grid.Column="1" Name="DetailValid" Margin="10,0,0,0"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Bases Count Panel -->
+                <Border BorderBrush="LightGray" BorderThickness="1">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Liczba zasad" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                            <TextBlock Grid.Column="0" Text="A:" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1" Name="BasesA" Margin="5,0"/>
+                            
+                            <TextBlock Grid.Column="2" Text="T:" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="3" Name="BasesT" Margin="5,0"/>
+                            
+                            <TextBlock Grid.Column="4" Text="G:" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="5" Name="BasesG" Margin="5,0"/>
+                            
+                            <TextBlock Grid.Column="6" Text="C:" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="7" Name="BasesC" Margin="5,0"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Chart -->
+                <Border BorderBrush="LightGray" BorderThickness="1">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Wykres rozkładu zasad DNA" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <Canvas Name="SequencesChart" Height="280" Background="White"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sequence Text -->
+                <Border BorderBrush="LightGray" BorderThickness="1">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Sekwencja:" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBox Name="SequenceTextBox" IsReadOnly="True" Height="120" TextWrapping="Wrap" AcceptsReturn="True"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
