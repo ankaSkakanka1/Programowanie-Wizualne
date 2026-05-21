@@ -32,19 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
       "projectName": "MojeOkno",
       "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
       "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
-      "projectName": "MojeOkno",
-      "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\MojeOkno.csproj",
-      "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojeOkno\\obj\\",
->>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Windows 10\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,13 +51,8 @@
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
               "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj"
-=======
-            "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj": {
-              "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj"
->>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce
             }
           }
         }
@@ -397,5 +384,13 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojeOkno\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
+    }
+  ]
 }

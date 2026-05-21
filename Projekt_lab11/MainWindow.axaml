@@ -1,37 +1,172 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="BioManager.Views.MainWindow"
-        Title="Menedżer Próbek Biologicznych" Width="800" Height="500">
-    
-    <DockPanel Margin="10">
-        <StackPanel DockPanel.Dock="Left" Width="250" Spacing="10">
-            <TextBlock Text="Dane próbki" FontWeight="Bold"/>
-            <TextBox Watermark="ID Próbki" Text="{Binding NewSample.Id}"/>
-            <TextBox Watermark="Nazwa" Text="{Binding NewSample.Name}"/>
-            <ComboBox SelectedIndex="0" SelectedItem="{Binding NewSample.Type}">
-                <ComboBoxItem>DNA</ComboBoxItem>
-                <ComboBoxItem>RNA</ComboBoxItem>
-                <ComboBoxItem>Białko</ComboBoxItem>
-                <ComboBoxItem>Inny</ComboBoxItem>
-            </ComboBox>
-            <DatePicker SelectedDate="{Binding NewSample.CollectionDate}"/>
-            <TextBox Watermark="Opis" Height="60" AcceptsReturn="True" Text="{Binding NewSample.Description}"/>
-            <Button Content="Dodaj Próbkę" Command="{Binding AddSampleCommand}" HorizontalAlignment="Stretch"/>
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:Projekt_lab11"
+        mc:Ignorable="d"
+        d:DesignWidth="1000"
+        d:DesignHeight="650"
+        x:Class="Projekt_lab11.MainWindow"
+        Title="Zarządzanie próbkami biologicznymi">
+
+    <Border Padding="12" Background="#f7f7f7">
+
+        <StackPanel>
+
+            <TextBlock Text="Zarządzanie próbkami biologicznymi"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Margin="0,0,0,12"/>
+
+            <Grid ColumnDefinitions="2*,3*"
+                  RowDefinitions="Auto,*"
+                  ColumnSpacing="12"
+                  RowSpacing="12">
+
+                <!-- LEWA STRONA -->
+
+                <StackPanel Grid.Column="0">
+
+                    <TextBlock Text="ID próbki"/>
+                    <TextBox x:Name="IdBox"
+                             Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Nazwa próbki"/>
+                    <TextBox x:Name="NameBox"
+                             Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Typ próbki"/>
+                    <ComboBox x:Name="TypeCombo"
+                              Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Data pobrania"/>
+                    <DatePicker x:Name="DatePicker"
+                                Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Opis / uwagi"/>
+                    <TextBox x:Name="DescriptionBox"
+                             AcceptsReturn="True"
+                             Height="100"
+                             TextWrapping="Wrap"
+                             Margin="0,0,0,10"/>
+
+                    <WrapPanel Margin="0,0,0,10">
+
+                        <Button Content="Dodaj"
+                                Click="AddButton_Click"
+                                Margin="0,0,8,0"/>
+
+                        <Button Content="Zaktualizuj"
+                                Click="UpdateButton_Click"
+                                Margin="0,0,8,0"/>
+
+                        <Button Content="Usuń"
+                                Click="DeleteButton_Click"/>
+
+                    </WrapPanel>
+
+                    <WrapPanel Margin="0,0,0,10">
+
+                        <Button Content="Wyczyść"
+                                Click="ClearButton_Click"
+                                Margin="0,0,8,0"/>
+
+                        <Button Content="Generuj QR"
+                                Click="GenerateButton_Click"/>
+
+                    </WrapPanel>
+
+                    <WrapPanel Margin="0,0,0,10">
+
+                        <Button Content="Eksportuj PNG"
+                                Click="ExportButton_Click"
+                                Margin="0,0,8,0"/>
+
+                        <Button Content="Drukuj etykietę"
+                                Click="PrintButton_Click"/>
+
+                    </WrapPanel>
+
+                </StackPanel>
+
+                <!-- PRAWA STRONA -->
+
+                <StackPanel Grid.Column="1">
+
+                    <TextBlock Text="Lista próbek"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"/>
+
+                    <TextBox x:Name="SearchBox"
+                             PlaceholderText="Wyszukaj po ID, nazwie lub typie"
+                             TextChanged="SearchBox_TextChanged"
+                             Margin="0,0,0,10"/>
+
+                    <ListBox x:Name="SamplesList"
+                             Height="320"
+                             SelectionChanged="SamplesList_SelectionChanged">
+
+                        <ListBox.ItemTemplate>
+
+                            <DataTemplate x:DataType="local:Sample">
+
+                                <Border Padding="8"
+                                        Margin="0,0,0,8"
+                                        Background="White"
+                                        CornerRadius="6"
+                                        BorderBrush="#d3d3d3"
+                                        BorderThickness="1">
+
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding Id}"
+                                                   FontWeight="Bold"/>
+
+                                        <TextBlock Text="{Binding Name}"/>
+
+                                        <TextBlock Text="{Binding Type}"
+                                                   FontStyle="Italic"
+                                                   FontSize="12"/>
+
+                                    </StackPanel>
+
+                                </Border>
+
+                            </DataTemplate>
+
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+
+                    <TextBlock Text="Podgląd kodu QR"
+                               FontWeight="Bold"
+                               Margin="0,10,0,10"/>
+
+                    <Border Background="White"
+                            Padding="8"
+                            BorderBrush="#d3d3d3"
+                            BorderThickness="1"
+                            CornerRadius="6"
+                            Width="240"
+                            Height="260">
+
+                        <Image x:Name="QrPreview"
+                               Width="220"
+                               Height="220"
+                               Stretch="Uniform"/>
+
+                    </Border>
+
+                </StackPanel>
+
+            </Grid>
+
+            <TextBlock x:Name="StatusText"
+                       Foreground="#b00020"
+                       Margin="0,12,0,0"/>
+
         </StackPanel>
 
-        <DataGrid Margin="10,0,0,0" ItemsSource="{Binding Samples}" AutoGenerateColumns="False" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nazwa" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Typ" Binding="{Binding Type}"/>
-                <DataGridTemplateColumn Header="Akcje">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="QR" Command="{Binding DataContext.ExportQrCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-    </DockPanel>
+    </Border>
+
 </Window>

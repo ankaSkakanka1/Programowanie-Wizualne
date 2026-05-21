@@ -1,14 +1,18 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "z/oNwcpY5aQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
-=======
-  "dgSpecHash": "EDuCP2KurI0=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
->>>>>>> d7db08d80d3d2e739331458d783c3db7b69718ce
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\zadanie2_3\\MojaBiblioteka\\MojaBiblioteka.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
