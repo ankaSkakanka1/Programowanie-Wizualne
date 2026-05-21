@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x4PRcFoWdWQ=",
+  "dgSpecHash": "+dvJ+qV3Fn4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\Projekt_lab11\\Projekt_lab11.csproj",
   "expectedPackageFiles": [
@@ -42,18 +42,5 @@
     "C:\\Users\\Windows 10\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\Windows 10\\.nuget\\packages\\tmds.dbus.protocol\\0.92.0\\tmds.dbus.protocol.0.92.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "Wersja Projekt_lab11 jest zależna od QRCoder (>= 1.5.5), ale nie znaleziono QRCoder 1.5.5. Zamiast tego rozwiązano QRCoder 1.6.0.",
-      "projectPath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\Projekt_lab11\\Projekt_lab11.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Windows 10\\Desktop\\Programowanie\\Programowanie Wizualne\\Programowanie-Wizualne-1\\Projekt_lab11\\Projekt_lab11.csproj",
-      "libraryId": "QRCoder",
-      "targetGraphs": [
-        "net10.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
