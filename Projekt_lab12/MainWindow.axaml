@@ -1,0 +1,155 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Projekt_lab12.Models"
+        mc:Ignorable="d"
+        d:DesignWidth="1200"
+        d:DesignHeight="700"
+        x:Class="Projekt_lab12.MainWindow"
+        Title="Notatnik Analityczny">
+
+    <Border Padding="12" Background="#f7f7f7">
+        <Grid ColumnDefinitions="2*,3*,2*"
+              RowDefinitions="Auto,*"
+              ColumnSpacing="12"
+              RowSpacing="12">
+
+            <TextBlock Grid.ColumnSpan="3"
+                       Text="Notatnik analityczny dla biologa molekularnego"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0,0,0,12"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="8">
+                <TextBlock Text="Nowa sesja" FontWeight="Bold"/>
+                <TextBox x:Name="SessionTitleBox"
+                         PlaceholderText="Tytuł sesji"/>
+                <Button Content="Utwórz sesję"
+                        Click="AddSessionButton_Click"/>
+                <Button Content="Usuń sesję"
+                        Click="DeleteSessionButton_Click"/>
+                <TextBlock Text="Sesje" FontWeight="Bold" Margin="0,12,0,4"/>
+                <ListBox x:Name="SessionsList"
+                         SelectionChanged="SessionsList_SelectionChanged"
+                         Height="520">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:Session">
+                            <Border Padding="8"
+                                    Margin="0,0,0,8"
+                                    Background="White"
+                                    CornerRadius="6"
+                                    BorderBrush="#d3d3d3"
+                                    BorderThickness="1">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}"
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding CreatedAt, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
+                                               FontSize="12"
+                                               Foreground="#555"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="8">
+                <TextBlock Text="Szczegóły sesji" FontWeight="Bold"/>
+                <TextBlock x:Name="SelectedSessionTitle"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Text="Brak wybranej sesji"/>
+                <TextBlock x:Name="SelectedSessionDate"
+                           FontSize="12"
+                           Foreground="#555"/>
+
+                <TextBlock Text="Wpisy" FontWeight="Bold" Margin="0,12,0,4"/>
+                <ListBox x:Name="EntriesList"
+                         SelectionChanged="EntriesList_SelectionChanged"
+                         Height="200">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:Entry">
+                            <Border Padding="8"
+                                    Margin="0,0,0,8"
+                                    Background="White"
+                                    CornerRadius="6"
+                                    BorderBrush="#d3d3d3"
+                                    BorderThickness="1">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}"
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding CreatedAt, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
+                                               FontSize="12"
+                                               Foreground="#555"/>
+                                    <TextBlock Text="{Binding Notes}"
+                                               FontSize="12"
+                                               TextWrapping="Wrap"
+                                               MaxHeight="60"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <TextBlock Text="Nowy wpis" FontWeight="Bold" Margin="0,12,0,4"/>
+                <TextBox x:Name="EntryTitleBox"
+                         PlaceholderText="Tytuł wpisu"/>
+                <TextBox x:Name="EntryNotesBox"
+                         PlaceholderText="Opis działań lub wyników"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         Height="180"/>
+
+                <StackPanel Spacing="8">
+                    <Button Content="Dodaj wpis"
+                            Click="AddEntryButton_Click"/>
+                    <Button Content="Usuń wpis"
+                            Click="DeleteEntryButton_Click"/>
+                    <Button Content="Wyczyść"
+                            Click="ClearEntryButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="2" Spacing="8">
+                <TextBlock Text="Załączniki" FontWeight="Bold"/>
+                <StackPanel Spacing="8">
+                    <Button Content="Dodaj załącznik"
+                            Click="AddAttachmentButton_Click"/>
+                    <Button Content="Usuń załącznik"
+                            Click="RemoveAttachmentButton_Click"/>
+                </StackPanel>
+                <ListBox x:Name="AttachmentsList"
+                         Height="300">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:Attachment">
+                            <Border Padding="8"
+                                    Margin="0,0,0,8"
+                                    Background="White"
+                                    CornerRadius="6"
+                                    BorderBrush="#d3d3d3"
+                                    BorderThickness="1">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding FileName}"
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Extension}"
+                                               FontSize="12"
+                                               Foreground="#555"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <TextBlock Text="Eksport" FontWeight="Bold" Margin="0,12,0,4"/>
+                <Button Content="Eksportuj całą sesję do PDF"
+                        Click="ExportPdfButton_Click"/>
+
+                <TextBlock x:Name="StatusText"
+                           Foreground="#b00020"
+                           TextWrapping="Wrap"
+                           Margin="0,12,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

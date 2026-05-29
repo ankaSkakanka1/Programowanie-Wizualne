@@ -1,0 +1,36 @@
+[
+  {
+    "Id": "8d4a527a11eb4b79a85760f19656e396",
+    "Title": "Sesja 1",
+    "CreatedAt": "2026-05-29T19:39:07.9417831+02:00",
+    "Entries": [
+      {
+        "Id": "07424aa5ec8e411aa9b9b9e2be57e8af",
+        "Title": "Wpis1",
+        "Notes": "jaki\u015B opis",
+        "CreatedAt": "2026-05-29T19:39:32.0853768+02:00",
+        "Attachments": [
+          {
+            "Id": "b1e6bda7dd5f46f29eeabfba8ecb6772",
+            "FileName": "OSCYL1.TXT",
+            "RelativePath": "attachments\\8d4a527a11eb4b79a85760f19656e396\\07424aa5ec8e411aa9b9b9e2be57e8af\\96d26c73207b4ead9654e4af7c6c41c5.TXT",
+            "Extension": ".txt"
+          }
+        ]
+      },
+      {
+        "Id": "10c7a0eef090441d89926556ee079af8",
+        "Title": "wpis2",
+        "Notes": "wpis",
+        "CreatedAt": "2026-05-29T19:40:01.7805071+02:00",
+        "Attachments": []
+      }
+    ]
+  },
+  {
+    "Id": "b7ca380d1fc547e7ac1bd5152b22d6be",
+    "Title": "Sesja 2",
+    "CreatedAt": "2026-05-29T19:41:23.7845711+02:00",
+    "Entries": []
+  }
+]
